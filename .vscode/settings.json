@@ -1,0 +1,13 @@
+{
+    "files.readonlyInclude": {
+        "{**/.c4z/.extsrcs/*.PROTSYM.cbl,**/.c4z/.extsrcs/*.PROTSYM.listing}": true
+    },
+    "cobol-lsp.analysis-mode": "BASIC",
+    "terminal.integrated.profiles.linux": {
+        "fish": {
+            "path": "/bin/fish"
+        }
+    },
+    "terminal.integrated.defaultProfile.linux": "fish"
+
+}
