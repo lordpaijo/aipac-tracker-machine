@@ -1,6 +1,6 @@
        WITHDRAW-MENU.
            DISPLAY "================================"
-           DISPLAY " Saldo Anda: Rp" WTE-BALANCE(WS-FOUND-IDX)
+           DISPLAY " Saldo Anda: Rp" AR-BALANCE
            DISPLAY "================================"
            DISPLAY "Jumlah penarikan: " WITH NO ADVANCING
            ACCEPT WS-INPUT-AMOUNT
@@ -15,7 +15,7 @@
                STOP RUN
            END-IF
 
-           IF WS-INPUT-AMOUNT > WTE-BALANCE(WS-FOUND-IDX)
+           IF WS-INPUT-AMOUNT > AR-BALANCE
                DISPLAY "ERROR: Saldo tidak mencukupi."
                STOP RUN
            END-IF
@@ -23,4 +23,4 @@
            PERFORM CALC-DENOMINATION
            PERFORM DISPLAY-RESULT
            PERFORM UPDATE-BALANCE
-           DISPLAY " Saldo tersisa: Rp" WTE-BALANCE(WS-FOUND-IDX).
+           DISPLAY " Saldo tersisa: Rp" AR-BALANCE.
