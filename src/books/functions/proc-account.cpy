@@ -21,3 +21,21 @@
                    DISPLAY "ERROR: Gagal menyimpan saldo."
                    STOP RUN
            END-REWRITE.
+
+       FIND-TARGET.
+           MOVE WS-TARGET-ID TO AR-ID
+           READ ACCOUNT-FILE KEY IS AR-ID
+               INVALID KEY
+                   MOVE 'N' TO WS-TARGET-FOUND
+               NOT INVALID KEY
+                   MOVE 'Y'    TO WS-TARGET-FOUND
+                   MOVE AR-NAME TO WS-TARGET-NAME
+           END-READ.
+
+       TRANSFER-FUNDS.
+           MOVE AR-NAME    TO WS-SOURCE-NAME
+           MOVE AR-BALANCE TO WS-SOURCE-BAL
+           PERFORM UPDATE-TARGET
+           PERFORM UPDATE-SOURCE.
+
+       COPY "src/books/functions/proc-account-childs/account-transfer-utils.cpy".

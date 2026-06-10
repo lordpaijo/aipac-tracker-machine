@@ -16,7 +16,7 @@
        DATA DIVISION.
        FILE SECTION.
        FD ACCOUNT-FILE.
-       COPY "books/storage/account-record.cpy".
+       COPY "src/books/storage/account-record.cpy".
 
        WORKING-STORAGE SECTION.
        01 WS-FILE-STATUS PIC XX VALUE SPACES.

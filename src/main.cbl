@@ -17,10 +17,10 @@
        DATA DIVISION.
        FILE SECTION.
        FD ACCOUNT-FILE.
-       COPY "books/storage/account-record.cpy".
+       COPY "src/books/storage/account-record.cpy".
 
        WORKING-STORAGE SECTION.
-       COPY "books/storage/ws-fields.cpy".
+       COPY "src/books/storage/ws-fields.cpy".
 
        PROCEDURE DIVISION.
            PERFORM LOGIN-SCREEN
@@ -34,12 +34,12 @@
            END-IF
 
            PERFORM VERIFY-PIN
-           PERFORM WITHDRAW-MENU
+           PERFORM ACTION-MENU
            PERFORM CLOSE-FILE
            STOP RUN.
 
-       COPY "books/functions/proc-print.cpy".
-       COPY "books/functions/proc-file.cpy".
-       COPY "books/functions/proc-account.cpy".
-       COPY "books/functions/proc-menu.cpy".
-       COPY "books/functions/proc-calc.cpy".
+       COPY "src/books/functions/proc-print.cpy".
+       COPY "src/books/functions/proc-file.cpy".
+       COPY "src/books/functions/proc-account.cpy".
+       COPY "src/books/functions/proc-menu.cpy".
+       COPY "src/books/functions/proc-calc.cpy".
