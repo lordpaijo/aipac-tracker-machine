@@ -17,7 +17,7 @@
        01 WS-D10000        PIC 9(3)  VALUE ZEROS.
        01 WS-OUT-NUM       PIC ZZZ9.
 
-       *> Transfer
+      *> Transfer
        01 WS-TARGET-ID     PIC 9(4)  VALUE ZEROS.
        01 WS-TARGET-FOUND  PIC X     VALUE 'N'.
        01 WS-TRANSFER-AMT  PIC 9(8)  VALUE ZEROS.

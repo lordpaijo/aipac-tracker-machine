@@ -2,14 +2,14 @@
            MOVE WS-TARGET-ID TO AR-ID
            READ ACCOUNT-FILE KEY IS AR-ID
                INVALID KEY
-                   DISPLAY "ERROR: Rekening tujuan tidak ditemukan."
+                   DISPLAY "ERROR: DESTINATION ACCOUNT NOI FOUND."
                    STOP RUN
            END-READ
 
            ADD WS-TRANSFER-AMT TO AR-BALANCE
            REWRITE ACCOUNT-RECORD
                INVALID KEY
-                   DISPLAY "ERROR: Gagal update rekening tujuan."
+                   DISPLAY "ERROR: FAILED TO UPDATE DESTINATION ACCOUNT."
                    STOP RUN
            END-REWRITE.
 
@@ -17,13 +17,13 @@
            MOVE WS-INPUT-ID TO AR-ID
            READ ACCOUNT-FILE KEY IS AR-ID
                INVALID KEY
-                   DISPLAY "ERROR: Gagal membaca rekening sumber."
+                   DISPLAY "ERROR: FAILED TO READ SOURCE ACCOUNT."
                    STOP RUN
            END-READ
 
            SUBTRACT WS-TRANSFER-AMT FROM AR-BALANCE
            REWRITE ACCOUNT-RECORD
                INVALID KEY
-                   DISPLAY "ERROR: Gagal update rekening sumber."
+                   DISPLAY "ERROR: FAILED TO UPDATE SOURCE ACCOUNT."
                    STOP RUN
            END-REWRITE.

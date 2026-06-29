@@ -9,16 +9,16 @@
 
        VERIFY-PIN.
            IF AR-PIN NOT = WS-INPUT-PIN
-               DISPLAY "PIN salah. Akses ditolak."
+               DISPLAY "WRONG PIN. ACCESS DENIED."
                STOP RUN
            END-IF
-           DISPLAY "Selamat datang, " AR-NAME.
+           DISPLAY "WELCOME, " AR-NAME.
 
        UPDATE-BALANCE.
            SUBTRACT WS-INPUT-AMOUNT FROM AR-BALANCE
            REWRITE ACCOUNT-RECORD
                INVALID KEY
-                   DISPLAY "ERROR: Gagal menyimpan saldo."
+                   DISPLAY "ERROR: FAILED TO SAVE BALANCE."
                    STOP RUN
            END-REWRITE.
 

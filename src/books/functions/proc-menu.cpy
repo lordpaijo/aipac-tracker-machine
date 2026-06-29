@@ -1,21 +1,21 @@
        WITHDRAW-MENU.
            DISPLAY "================================"
-           DISPLAY " Saldo Anda: Rp" AR-BALANCE
+           DISPLAY " YOUR BALANCE: Rp" AR-BALANCE
            DISPLAY "================================"
-           DISPLAY "Jumlah penarikan: " WITH NO ADVANCING
+           DISPLAY " WITHDRAWAL AMOUNT: " WITH NO ADVANCING
            ACCEPT WS-INPUT-AMOUNT
            PERFORM ERROR-CHECK
            PERFORM CALC-DENOMINATION
            PERFORM DISPLAY-RESULT
            PERFORM UPDATE-BALANCE
-           DISPLAY " Saldo tersisa: Rp" AR-BALANCE.
+           DISPLAY " BALANCE REMAINING: Rp" AR-BALANCE.
 
        TRANSFER-MENU.
            DISPLAY "================================"
-           DISPLAY " TRANSFER DANA"
-           DISPLAY " Saldo Anda: Rp" AR-BALANCE
+           DISPLAY " BALANCE TRANSFER "
+           DISPLAY " YOUR BALANCE: Rp" AR-BALANCE
            DISPLAY "================================"
-           DISPLAY "No. Rekening Tujuan: "
+           DISPLAY "DESTINATION ACCOUNT NUMBER: "
                WITH NO ADVANCING
            ACCEPT WS-TARGET-ID
            PERFORM TRANSFER-INPUT-HANDLE
@@ -23,10 +23,10 @@
 
        ACTION-MENU.
            DISPLAY "================================"
-           DISPLAY " 1. Tarik Tunai"
-           DISPLAY " 2. Transfer Dana"
+           DISPLAY " 1. CASH WITHDRAWAL"
+           DISPLAY " 2. BALANCE TRANSFER"
            DISPLAY "================================"
-           DISPLAY "Pilihan: " WITH NO ADVANCING
+           DISPLAY "CHOICE: " WITH NO ADVANCING
            ACCEPT WS-MENU-CHOICE
 
            EVALUATE WS-MENU-CHOICE
@@ -35,7 +35,7 @@
                WHEN 2
                    PERFORM TRANSFER-MENU
                WHEN OTHER
-                   DISPLAY "Pilihan tidak valid."
+                   DISPLAY "INVALID CHOICE."
            END-EVALUATE.
 
        COPY "src/books/functions/proc-menu-childs/withdraw-menu-utils.cpy".
